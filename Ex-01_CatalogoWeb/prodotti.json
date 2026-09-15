@@ -1,0 +1,68 @@
+{
+  "prodotti": [
+    {
+      "id": 1,
+      "nome": "Notebook Lenovo",
+      "categoria": "Computer",
+      "prezzo": 749.99,
+      "disponibile": true,
+      "quantita": 12
+    },
+    {
+      "id": 2,
+      "nome": "Mouse Logitech",
+      "categoria": "Accessori",
+      "prezzo": 29.90,
+      "disponibile": true,
+      "quantita": 35
+    },
+    {
+      "id": 3,
+      "nome": "Tastiera meccanica",
+      "categoria": "Accessori",
+      "prezzo": 89.90,
+      "disponibile": true,
+      "quantita": 18
+    },
+    {
+      "id": 4,
+      "nome": "Monitor Samsung 27\"",
+      "categoria": "Monitor",
+      "prezzo": 249.99,
+      "disponibile": true,
+      "quantita": 7
+    },
+    {
+      "id": 5,
+      "nome": "Stampante HP",
+      "categoria": "Stampanti",
+      "prezzo": 129.90,
+      "disponibile": false,
+      "quantita": 0
+    },
+    {
+      "id": 6,
+      "nome": "SSD 1 TB",
+      "categoria": "Componenti",
+      "prezzo": 79.90,
+      "disponibile": true,
+      "quantita": 21
+    },
+    {
+      "id": 7,
+      "nome": "Webcam Full HD",
+      "categoria": "Accessori",
+      "prezzo": 59.90,
+      "disponibile": true,
+      "quantita": 14
+    },
+    {
+      "id": 8,
+      "nome": "Scheda video RTX",
+      "categoria": "Componenti",
+      "prezzo": 599.00,
+      "disponibile": false,
+      "quantita": 0
+    }
+  ]
+}
