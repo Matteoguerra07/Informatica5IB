@@ -6,6 +6,7 @@ import java.util.List;
 
 public class CSVLoader {
     String file = "Persone.csv";
+    Relation rel;
 
     public CSVLoader(String file){
         this.file = file;
@@ -19,9 +20,13 @@ public class CSVLoader {
             BufferedReader br = new BufferedReader(new FileReader(this.file));
                 String line;
                 while ((line = br.readLine()) != null) {
-                    
                     String [] campi= line.split(",");
                     rowNumber++;
+                    rel.header[0] = campi[0];
+
+                    for(int i = 0; i< campi.length; i++){
+                         System.out.println(campi[i]);
+                    }
                 }
         }catch(Exception e){
             System.out.println("can't load "+this.file);
