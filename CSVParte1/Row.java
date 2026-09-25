@@ -1,19 +1,28 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Row {
-    List<String> values;
+    ArrayList<String> values;
 
-    public Row(List<String> values) {
+    public Row(ArrayList<String> values) {
         this.values = values;
     }
 
-    @Override 
-    public String toString(){
-        String out = "";
-        for (int i = 0; i < values.size(); i++) {
-            out += values.get(i) + "";
-        }
-        return out;
+    public String getValue(int index) {
+        return values.get(index);
     }
 
+    public ArrayList<String> getValues() {
+        return values;
+    }
+
+    public void setValues(ArrayList<String> values) {
+        this.values = values;
+    }
+
+    @Override
+    public String toString() {
+        return "Row{" +
+                "values=" + values +
+                '}';
+    }
 }
