@@ -1,29 +1,37 @@
 
+import java.util.ArrayList;
+
+
+
+
 public class Main {
     public static void main(String[] args){
-        CSVLoader loader1 = new CSVLoader("Ordini.csv");
-        CSVLoader loader2 = new CSVLoader("Persone.csv");
-        CSVLoader loader3 = new CSVLoader("Prodotti.csv");
+        CSVLoader loader1 = new CSVLoader("city.csv");
+        CSVLoader loader2 = new CSVLoader("country.csv");
+        CSVLoader loader3 = new CSVLoader("countrylanguage.csv");
 
-        Relation ordini = loader1.loadCSVinRelation();
-        Relation persone = loader2.loadCSVinRelation();
-        Relation prodotti = loader3.loadCSVinRelation();
+        Relation city = loader1.loadCSVinRelation();
+        Relation country = loader2.loadCSVinRelation();
+        Relation countrylanguage = loader3.loadCSVinRelation();
 
-        System.out.println("Prodotto cartesiano");
-        System.err.println(persone.prodotto(prodotti).toString());
+        //quesito 1: trova tutte le nazioni Europee
+        System.out.println("Tutti i paesi in europa:");
+        System.out.println(country.selection("Continent", "Europe"));
+        System.out.println("\n");
 
-        System.out.println("Giunzione");
-        String[] s = {"id_prodotto", "id_prodotto"};
-        System.err.println(ordini.join(prodotti, s).toString());
+        //quesito 2: trova tutte le città in francia
+        System.out.println("Tutti le città in francia:");
+        ArrayList<String> quesito2 =  new ArrayList<>();
+        quesito2.add("Name");
+        quesito2.add("CountryCode");
+        System.out.println(city.projection(quesito2).selection("CountryCode", "FRA"));
+        System.out.println("\n");
 
-        System.out.println("\nQuery n1 (Visualizzare il totale per tutti gli ordin1): ");
-        totaleOrdini(ordini, prodotti);
+        //quesito 3: trova il nome delle nazioni che hanno una popolazione compresa tra 100 milioni e 200 milioni di abitanti
 
-        System.out.println("\nQuery n2 (Visualizzare il totale per ogni singolo ordine): ");
-        totaleSingolo(ordini, prodotti);
+        System.out.println("nome dei paesi con una popolazione compresta tra 100 milioni e 200 milioni:");
         
-        System.out.println("\nQuery n3 (Gli utenti che hanno acquistato il prodotto più costoso): ");
-        prodottoCostoso(prodotti, ordini, persone);
+        System.out.println("\n");
     }
 
     public static void totaleOrdini(Relation relazione1, Relation relazione2){

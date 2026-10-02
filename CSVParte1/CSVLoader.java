@@ -18,7 +18,7 @@ public class CSVLoader {
             BufferedReader br = new BufferedReader(new FileReader(this.file));
             String line;
             while ((line = br.readLine()) != null) {
-                String[] campi = line.split(",");
+                String[] campi = line.replace("\"", "").split(",");
 
                 if (rowNum == 0) {
                     for (int i = 0; i < campi.length; i++) {
