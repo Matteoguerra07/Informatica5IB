@@ -1,8 +1,4 @@
-
 import java.util.ArrayList;
-
-
-
 
 public class Main {
     public static void main(String[] args){
@@ -29,12 +25,44 @@ public class Main {
 
         //quesito 3: trova il nome delle nazioni che hanno una popolazione compresa tra 100 milioni e 200 milioni di abitanti
 
-        System.out.println("nome dei paesi con una popolazione compresta tra 100 milioni e 200 milioni:");
-        
+        System.out.println("nome dei paesi con una popolazione compresa tra 100 milioni e 200 milioni:");
+        ArrayList<String> quesito3 = new ArrayList<>();
+        quesito3.add("Name");
+        quesito3.add("Popolation");
+        //System.out.println(country.projection(quesito3).selection(6).selection(null, null));
+        System.out.println("\n");   
+
+        //quesito 4: trova tutte le nazioni del sud America, il nome della capitale, la popolazione e nome dello stato
+
+        System.out.println("Capitale, popolazione, stato delle nazioni del sud America");
+        ArrayList<String> quesito4 = new ArrayList<>();
+        Relation cityR = city.rename("Name", "CityName").rename("Population", "CityPopulation");
+        Relation nazioni = country.selection("Continent", "South America");
+        Relation uniti = nazioni.join(cityR, new String[]{"Capital", "ID"});
+
+        quesito4.add("CityName");
+        quesito4.add("Population");
+        quesito4.add("Name");
+
+
+        System.out.println(uniti.projection(quesito4));
         System.out.println("\n");
+
+
+        //quesito 5: trova le nazioni asiatiche con numero di abitanti maggiore di quello del Giappone.
+        System.out.println("Paesi asiatici con popolazione maggiore rispetto al giappone");
+        int popolazione = country.getHeader().indexOf("Population");
+        int popGiapp = Integer.parseInt(country.selection("Name", "Japan").getRows().get(0).getValue(popolazione));
+
+        ArrayList<String> quesito5 = new ArrayList<>();
+        quesito5.add("Name");
+        quesito5.add("Population");
+        System.out.println(country.selection("Continent", "Asia").selection("Population", ">", popGiapp).projection(quesito5));
+
+        
     }
 
-    public static void totaleOrdini(Relation relazione1, Relation relazione2){
+    /*public static void totaleOrdini(Relation relazione1, Relation relazione2){
         int tot = 0;
         for (int i = 0; i<relazione1.getRows().size(); i++){
             Row r = relazione1.getRows().get(i);
@@ -92,5 +120,5 @@ public class Main {
                 }
             }
         }
-    }
+    }*/
 }

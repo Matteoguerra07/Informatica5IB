@@ -42,6 +42,35 @@ public class Relation {
         return ris;
     }
 
+    public Relation selection(String key, String operator, int num){
+        Relation ris = new Relation();
+        int i = header.indexOf(key);
+        ArrayList<Row> selectedRow = new ArrayList<>();
+
+        for (int j = 0; j < rows.size(); j++) {
+            Row r = rows.get(j);
+            double v;
+            try {
+                v = Double.parseDouble(r.getValue(i));
+            } catch (NumberFormatException e) {
+                continue; // salta NULL
+            }
+
+            boolean ok = false;
+            if (operator.equals(">")) ok = v > num;
+            else if (operator.equals(">=")) ok = v >= num;
+            else if (operator.equals("<")) ok = v < num;
+            else if (operator.equals("<=")) ok = v <= num;
+            else if (operator.equals("=")) ok = v == num;
+
+            if (ok) selectedRow.add(r);
+        }
+
+        ris.setHeader(header);
+        ris.setRows(selectedRow);
+        return ris;
+    }
+
 
 
     public Relation projection(ArrayList<String> keys) {
@@ -150,6 +179,12 @@ public class Relation {
             }
         }
         return new Relation(prodotto.getHeader(), righe);
+    }
+
+    public Relation rename(String oldName, String newName) {
+        ArrayList<String> newHeader = new ArrayList<>(header);
+        newHeader.set(newHeader.indexOf(oldName), newName);
+        return new Relation(newHeader, rows);
     }
 
     @Override 
