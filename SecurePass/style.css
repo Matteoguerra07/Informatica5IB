@@ -1,0 +1,17 @@
+body{
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+main{
+    width: 400px;
+    height: 600px;
+    background-color: gray;
+    border-radius: 8px;
+    border: 1px solid slategray;
+    justify-content: center;
+    align-items: center;
+
+}
