@@ -1,17 +1,55 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+.body{
     height: 98vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f4f3ee;
 } 
 
 main{
+    font-family: 'Sora';
+    color: #222222;
     width: 400px;
-    height: 600px;
-    background-color: gray;
-    border-radius: 8px;
-    border: 1px solid slategray;
+    height: 500px;
+    background-color: #f4f3ee;
+    border-radius: 12px;
+    border: 2px solid #e0afa0;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 
+}
+
+.titolo{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.inputcontainer{
+    background-color: #ddd9d0;
+    padding: 8px;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.casella{
+    padding: 10px;
+    border: #e7e3da 1px solid;
+    border-radius: 20px;
+}
+
+.button {
+    border-radius: 20px;
+    border: #e0afa0 1px solid;
+    padding-inline: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submit_button{
+    background-color: #e0afa0;
 }
