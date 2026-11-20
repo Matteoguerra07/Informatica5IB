@@ -1,0 +1,61 @@
+body{
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.base{
+    align-self: center;
+    height: 64%;
+    width: 24%;
+    border-radius: 8px;
+    padding: 20px;
+    background-color:  #224870;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen{
+    padding: 4px;
+    width: 80%;
+    height: 40%;
+    border-radius: 8px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen .area{
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    background-color: #8bac0f;
+    color:  #344e41;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.commands{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.commands .cross_center{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cmd_button{
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #B5C2B7;
+}
